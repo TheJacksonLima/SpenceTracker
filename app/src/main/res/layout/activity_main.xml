@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tvExpenseType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Tipo"
+        app:layout_constraintBottom_toBottomOf="@+id/spExpenseType"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spExpenseType" />
+
+    <Spinner
+        android:id="@+id/spExpenseType"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toEndOf="@+id/tvExpenseType"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvEnpenseDetail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Detalhe :"
+        app:layout_constraintStart_toStartOf="@+id/tvExpenseType"
+        app:layout_constraintTop_toBottomOf="@+id/spExpenseType" />
+
+    <Spinner
+        android:id="@+id/spExpenseDetail"
+        android:layout_width="220dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvEnpenseDetail"
+        app:layout_constraintStart_toEndOf="@+id/tvEnpenseDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvEnpenseDetail"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Valor"
+        app:layout_constraintStart_toStartOf="@+id/tvEnpenseDetail"
+        app:layout_constraintTop_toBottomOf="@+id/spExpenseDetail" />
+
+    <EditText
+        android:id="@+id/etValue"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="@+id/tvValue"
+        app:layout_constraintStart_toEndOf="@+id/tvValue"
+        app:layout_constraintTop_toTopOf="@+id/tvValue"
+        app:layout_constraintVertical_bias="0.702" />
+
+    <TextView
+        android:id="@+id/tvDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Data"
+        app:layout_constraintStart_toStartOf="@+id/tvValue"
+        app:layout_constraintTop_toBottomOf="@+id/etValue" />
+
+    <EditText
+        android:id="@+id/etTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:ems="10"
+        android:inputType="time"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+        app:layout_constraintStart_toEndOf="@+id/tvDate"
+        app:layout_constraintTop_toTopOf="@+id/tvDate"
+        app:layout_constraintVertical_bias="0.538" />
+
+    <Button
+        android:id="@+id/btAddExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="140dp"
+        android:text="Lançar"
+        app:layout_constraintStart_toStartOf="@+id/tvDate"
+        app:layout_constraintTop_toBottomOf="@+id/etTime" />
+
+    <Button
+        android:id="@+id/btCheckExpenses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Ver lançamentos"
+        app:layout_constraintBottom_toBottomOf="@+id/btAddExpense"
+        app:layout_constraintEnd_toEndOf="@+id/etTime"
+        app:layout_constraintStart_toEndOf="@+id/btAddExpense"
+        app:layout_constraintTop_toTopOf="@+id/btAddExpense"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btBalance"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Saldo"
+        app:layout_constraintEnd_toEndOf="@+id/btCheckExpenses"
+        app:layout_constraintStart_toStartOf="@+id/btAddExpense"
+        app:layout_constraintTop_toBottomOf="@+id/btAddExpense" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
