@@ -8,115 +8,137 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/tvExpenseType"
+        android:id="@+id/tvCategory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:text="Tipo"
-        app:layout_constraintBottom_toBottomOf="@+id/spExpenseType"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="111dp"
+        android:text="@string/categoria"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/spExpenseType" />
-
-    <Spinner
-        android:id="@+id/spExpenseType"
-        android:layout_width="250dp"
-        android:layout_height="20dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toEndOf="@+id/tvExpenseType"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvEnpenseDetail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Detalhe :"
-        app:layout_constraintStart_toStartOf="@+id/tvExpenseType"
-        app:layout_constraintTop_toBottomOf="@+id/spExpenseType" />
-
     <Spinner
-        android:id="@+id/spExpenseDetail"
+        android:id="@+id/spSpenceCategory"
         android:layout_width="220dp"
-        android:layout_height="20dp"
+        android:layout_height="48dp"
         android:layout_marginStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvEnpenseDetail"
-        app:layout_constraintStart_toEndOf="@+id/tvEnpenseDetail"
-        app:layout_constraintTop_toTopOf="@+id/tvEnpenseDetail"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCategory"
+        app:layout_constraintStart_toEndOf="@+id/tvCategory"
+        app:layout_constraintTop_toTopOf="@+id/tvCategory"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tvValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Valor"
-        app:layout_constraintStart_toStartOf="@+id/tvEnpenseDetail"
-        app:layout_constraintTop_toBottomOf="@+id/spExpenseDetail" />
+        android:layout_marginTop="30dp"
+        android:text="@string/valor"
+        app:layout_constraintStart_toStartOf="@+id/tvCategory"
+        app:layout_constraintTop_toBottomOf="@+id/spSpenceDetail" />
 
     <EditText
         android:id="@+id/etValue"
         android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="20dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:autofillHints=""
         android:ems="10"
-        android:inputType="numberSigned"
+        android:inputType="numberDecimal"
         app:layout_constraintBottom_toBottomOf="@+id/tvValue"
         app:layout_constraintStart_toEndOf="@+id/tvValue"
         app:layout_constraintTop_toTopOf="@+id/tvValue"
-        app:layout_constraintVertical_bias="0.702" />
+        app:layout_constraintVertical_bias="0.571"
+        tools:ignore="LabelFor" />
 
     <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
-        android:text="Data"
+        android:layout_marginTop="30dp"
+        android:text="@string/data"
         app:layout_constraintStart_toStartOf="@+id/tvValue"
         app:layout_constraintTop_toBottomOf="@+id/etValue" />
 
     <EditText
-        android:id="@+id/etTime"
+        android:id="@+id/etDate"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="20dp"
         android:ems="10"
-        android:inputType="time"
+        android:inputType="textShortMessage"
         app:layout_constraintBottom_toBottomOf="@+id/tvDate"
         app:layout_constraintStart_toEndOf="@+id/tvDate"
         app:layout_constraintTop_toTopOf="@+id/tvDate"
         app:layout_constraintVertical_bias="0.538" />
 
-    <Button
-        android:id="@+id/btAddExpense"
+    <TextView
+        android:id="@+id/tvDetail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="140dp"
-        android:text="Lançar"
-        app:layout_constraintStart_toStartOf="@+id/tvDate"
-        app:layout_constraintTop_toBottomOf="@+id/etTime" />
+        android:layout_marginTop="30dp"
+        android:text="@string/detalhe"
+        app:layout_constraintStart_toStartOf="@+id/tvCategory"
+        app:layout_constraintTop_toBottomOf="@+id/spSpenceCategory" />
 
-    <Button
-        android:id="@+id/btCheckExpenses"
+    <Spinner
+        android:id="@+id/spSpenceDetail"
+        android:layout_width="220dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDetail"
+        app:layout_constraintStart_toEndOf="@+id/tvDetail"
+        app:layout_constraintTop_toTopOf="@+id/tvDetail" />
+
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:text="Ver lançamentos"
-        app:layout_constraintBottom_toBottomOf="@+id/btAddExpense"
-        app:layout_constraintEnd_toEndOf="@+id/etTime"
-        app:layout_constraintStart_toEndOf="@+id/btAddExpense"
-        app:layout_constraintTop_toTopOf="@+id/btAddExpense"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btBalance"
-        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Saldo"
-        app:layout_constraintEnd_toEndOf="@+id/btCheckExpenses"
-        app:layout_constraintStart_toStartOf="@+id/btAddExpense"
-        app:layout_constraintTop_toBottomOf="@+id/btAddExpense" />
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="@+id/etDate"
+        app:layout_constraintStart_toStartOf="@+id/etDate"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <Button
+            android:id="@+id/btAddExpense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/adicionar_despesa" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
+
+        <Button
+            android:id="@+id/btFinancialStatement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ver_saldo" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/etDate"
+        app:layout_constraintStart_toStartOf="@+id/etDate"
+        app:layout_constraintTop_toBottomOf="@+id/etDate">
+
+        <RadioButton
+            android:id="@+id/rdCredit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/saida" />
+
+        <RadioButton
+            android:id="@+id/rdIncome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/entrada" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<resources>
+    <string-array name="tipos_de_despesas">
+        <item>--</item>
+        <item>Moradia</item>
+        <item>Alimentação</item>
+        <item>Transporte</item>
+        <item>Saúde</item>
+        <item>Educação</item>
+        <item>Lazer e entretenimento</item>
+        <item>Despesas pessoais</item>
+        <item>Serviços e utilidades</item>
+        <item>Dívidas e financiamentos</item>
+        <item>Impostos e taxas</item>
+        <item>Investimentos e poupança</item>
+    </string-array>
+
+    <string-array name="moradia_despesas">
+        <item>--</item>
+        <item>Aluguel ou hipoteca</item>
+        <item>Condomínio</item>
+        <item>Impostos sobre a propriedade</item>
+        <item>Manutenção e reparos</item>
+    </string-array>
+
+    <string-array name="alimentacao_despesas">
+        <item>--</item>
+        <item>Compras de supermercado</item>
+        <item>Refeições fora de casa</item>
+        <item>Entregas de comida</item>
+    </string-array>
+
+    <string-array name="transporte_despesas">
+        <item>--</item>
+        <item>Combustível</item>
+        <item>Manutenção de veículo</item>
+        <item>Seguro de automóvel</item>
+        <item>Transporte público</item>
+        <item>Financiamento ou leasing de veículo</item>
+    </string-array>
+
+    <string-array name="saude_despesas">
+        <item>--</item>
+        <item>Plano de saúde</item>
+        <item>Medicamentos</item>
+        <item>Consultas médicas</item>
+        <item>Exames e tratamentos</item>
+    </string-array>
+
+    <string-array name="educacao_despesas">
+        <item>--</item>
+        <item>Mensalidades escolares ou universitárias</item>
+        <item>Cursos e treinamentos</item>
+        <item>Material escolar ou didático</item>
+    </string-array>
+
+    <string-array name="lazer_entretenimento_despesas">
+        <item>--</item>
+        <item>Assinaturas de streaming</item>
+        <item>Viagens</item>
+        <item>Cinema, shows e eventos</item>
+        <item>Esportes e atividades recreativas</item>
+    </string-array>
+
+    <string-array name="despesas_pessoais">
+        <item>--</item>
+        <item>Roupas e calçados</item>
+        <item>Cuidados pessoais</item>
+        <item>Eletrônicos e gadgets</item>
+    </string-array>
+
+    <string-array name="servicos_utilidades_despesas">
+        <item>--</item>
+        <item>Água</item>
+        <item>Luz</item>
+        <item>Gás</item>
+        <item>Internet e telefone</item>
+        <item>TV a cabo</item>
+    </string-array>
+
+    <string-array name="dividas_financiamentos_despesas">
+        <item>--</item>
+        <item>Pagamentos de cartões de crédito</item>
+        <item>Parcelamentos de compras</item>
+        <item>Empréstimos pessoais</item>
+    </string-array>
+
+    <string-array name="impostos_taxas_despesas">
+        <item>--</item>
+        <item>Imposto de renda</item>
+        <item>Taxas de serviço</item>
+        <item>Contribuições sindicais</item>
+    </string-array>
+
+    <string-array name="investimentos_poupanca_despesas">
+        <item>--</item>
+        <item>Contribuições para aposentadoria</item>
+        <item>Investimentos em ações ou fundos</item>
+        <item>Poupança</item>
+    </string-array>
+</resources>

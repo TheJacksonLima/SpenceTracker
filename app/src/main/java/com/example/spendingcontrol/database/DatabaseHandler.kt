@@ -11,16 +11,19 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME
 
     companion object {
         private const val DATABASE_NAME = "dbfile.sqlite"
-        private const val DATABASE_VERSION = 1
+        private const val DATABASE_VERSION = 5
         private const val TABLE_NAME = "my_spenses"
-        private const val COD = 0
-        private const val TYPE = 1
-        private const val VALUE = 2
-        private const val DATE = 3
+        const val COD = 0
+        const val CATEGORY = 1
+        const val DETAILS = 2
+        const val TYPE = 3
+        const val VALUE = 4
+        const val DATE = 5
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("CREATE TABLE IF NOT EXISTS ${TABLE_NAME}(_id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, telefone TEXT)")
+        db?.execSQL("CREATE TABLE IF NOT EXISTS ${TABLE_NAME}(_id INTEGER PRIMARY KEY AUTOINCREMENT, category String, details String,type String, value Float, date String)")
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -33,6 +36,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME
         val db = this.writableDatabase
         val data = ContentValues()
 
+        data.put("category",spence.category)
+        data.put("details",spence.details)
         data.put("type",spence.type)
         data.put("value",spence.value)
         data.put("date",spence.date)
@@ -45,6 +50,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME
         val db = this.writableDatabase
         val data = ContentValues()
 
+        data.put("category",spence.category)
+        data.put("details",spence.details)
         data.put("type",spence.type)
         data.put("value",spence.value)
         data.put("date",spence.date)
@@ -74,8 +81,10 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME
         {
             return Spence(
                 id,
+                data.getString(CATEGORY),
+                data.getString(DETAILS),
                 data.getString(TYPE),
-                data.getFloat(VALUE),
+                data.getDouble(VALUE),
                 data.getString(DATE),
             )
         }
@@ -102,8 +111,10 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME
             lData.add(
                 Spence(
                     data.getInt(COD),
+                    data.getString(CATEGORY),
+                    data.getString(DETAILS),
                     data.getString(TYPE),
-                    data.getFloat(VALUE),
+                    data.getDouble(VALUE),
                     data.getString(DATE),
                 )
             )
@@ -119,11 +130,33 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(context,DATABASE_NAME
             null,
             null,
             null,
+            "date, category",
             null,
-            null,
-            null
+            "date"
         )
 
+
+    }
+
+    fun getValues(type : String): Double {
+        var sumValue: Double = 0.00
+
+        val db = this.writableDatabase
+        val cursor: Cursor = db.rawQuery("SELECT SUM(value) as sum FROM my_spenses WHERE type == ?", arrayOf(type))
+
+        if(cursor.moveToFirst()) {
+            sumValue = cursor.getDouble(cursor.getColumnIndexOrThrow("sum"))
+        }
+        cursor.close()
+        return sumValue
+    }
+
+    fun getIncome(): String {
+        return getValues("D").toString()
+    }
+
+    fun getOutcome(): String{
+       return getValues("C").toString()
     }
 
 }
